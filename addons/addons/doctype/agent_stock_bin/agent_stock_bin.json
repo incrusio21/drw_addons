@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-01-20 13:54:20.492885",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "id_agent_lama",
+  "customer",
+  "column_break_4",
+  "nama_agent",
+  "section_break_6",
+  "item_code",
+  "item_name",
+  "qty"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "DRW-BIN-.YY.-",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.id_drw",
+   "fieldname": "id_agent_lama",
+   "fieldtype": "Data",
+   "label": "ID Beauty Consultant Lama",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "ID Beauty Consultant",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "label": "Qty",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "nama_agent",
+   "fieldtype": "Data",
+   "label": "Nama Beauty Consultant",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-01-25 16:45:44.976090",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Agent Stock Bin",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

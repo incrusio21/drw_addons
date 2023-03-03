@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-01-20 14:31:55.081335",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "id_paket",
+  "id_lama",
+  "qty",
+  "harga",
+  "total"
+ ],
+ "fields": [
+  {
+   "fieldname": "id_lama",
+   "fieldtype": "Data",
+   "label": "ID Lama"
+  },
+  {
+   "fieldname": "id_paket",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "ID Paket",
+   "options": "Master Paket",
+   "reqd": 1
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty"
+  },
+  {
+   "fetch_from": "id_paket.harga",
+   "fieldname": "harga",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Harga",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-01-24 09:38:47.033078",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Agent Order Paket",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

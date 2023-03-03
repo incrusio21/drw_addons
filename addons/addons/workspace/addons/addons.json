@@ -1,0 +1,52 @@
+{
+ "category": "Modules",
+ "charts": [],
+ "creation": "2023-01-30 14:03:01.151179",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Addons",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Agent Order",
+   "link_to": "Agent Order",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Agent Stock Log",
+   "link_to": "Agent Stock Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Agent Stock Bin",
+   "link_to": "Agent Stock Bin",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2023-01-30 14:03:30.473453",
+ "modified_by": "satria@das.com",
+ "module": "Addons",
+ "name": "Addons",
+ "owner": "satria@das.com",
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "shortcuts": []
+}

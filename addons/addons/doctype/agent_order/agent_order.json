@@ -1,0 +1,336 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-01-20 14:30:26.273449",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "id_drw_order",
+  "naming_series",
+  "customer",
+  "nama_agent",
+  "id_drw",
+  "alamat",
+  "alamat_pengirim",
+  "column_break_5",
+  "tanggal",
+  "upline",
+  "upline_rekening",
+  "upline_bank",
+  "atas_nama",
+  "section_break_11",
+  "daftar_paket",
+  "section_break_14",
+  "base_total_paket",
+  "column_break_15",
+  "total_paket",
+  "section_break_22",
+  "items",
+  "section_break_24",
+  "base_total",
+  "base_net_total",
+  "section_break_20",
+  "total",
+  "net_total",
+  "section_break_26",
+  "daftar_promo",
+  "section_break_16",
+  "biaya_ongkir",
+  "ekspedisi",
+  "biaya_penanganan",
+  "section_break_33",
+  "base_total_promo",
+  "column_break_30",
+  "total_promo",
+  "section_break_32",
+  "base_grand_total",
+  "column_break_34",
+  "grand_total",
+  "more_information_section",
+  "catatan",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fetch_from": "customer.id_drw",
+   "fetch_if_empty": 1,
+   "fieldname": "id_drw",
+   "fieldtype": "Data",
+   "label": "ID DRW"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming",
+   "options": "DRW-ORD-.YY.-.#####",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "ID Beauty Consultant",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "alamat",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Alamat"
+  },
+  {
+   "fieldname": "alamat_pengirim",
+   "fieldtype": "Data",
+   "label": "Alamat Pengirim"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tanggal",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Tanggal"
+  },
+  {
+   "fetch_from": "customer.upline",
+   "fieldname": "upline",
+   "fieldtype": "Data",
+   "label": "Upline"
+  },
+  {
+   "fieldname": "upline_rekening",
+   "fieldtype": "Data",
+   "label": "Upline Rekening"
+  },
+  {
+   "fieldname": "upline_bank",
+   "fieldtype": "Data",
+   "label": "Upline Bank"
+  },
+  {
+   "fieldname": "atas_nama",
+   "fieldtype": "Data",
+   "label": "Atas Nama"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "daftar_paket",
+   "fieldtype": "Table",
+   "label": "Daftar Paket",
+   "options": "Agent Order Paket"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "base_total_paket",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Paket (Company Currency)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_paket",
+   "fieldtype": "Currency",
+   "label": "Total Paket",
+   "read_only": 1
+  },
+  {
+   "fieldname": "daftar_promo",
+   "fieldtype": "Table",
+   "label": "Daftar Promo",
+   "options": "Agent Order Promo"
+  },
+  {
+   "fieldname": "base_total_promo",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Promo (Company Currency)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_promo",
+   "fieldtype": "Currency",
+   "label": "Total Promo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Agent Order Item"
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "base_total",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total (Company Currency)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "base_net_total",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Net Total  (Company Currency)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "label": "Net Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "base_grand_total",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Grand Total (Company Currency)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_34",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Grand Total",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "more_information_section",
+   "fieldtype": "Section Break",
+   "label": "More Information"
+  },
+  {
+   "fieldname": "catatan",
+   "fieldtype": "Small Text",
+   "label": "Catatan"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Agent Order",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Agent Order",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_26",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_32",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "nama_agent",
+   "fieldtype": "Data",
+   "label": "Nama Beauty Consultant",
+   "read_only": 1
+  },
+  {
+   "fieldname": "biaya_ongkir",
+   "fieldtype": "Currency",
+   "label": "Biaya Ongkir"
+  },
+  {
+   "fieldname": "ekspedisi",
+   "fieldtype": "Data",
+   "label": "Ekspedisi"
+  },
+  {
+   "fieldname": "biaya_penanganan",
+   "fieldtype": "Currency",
+   "label": "Biaya Penanganan"
+  },
+  {
+   "fieldname": "section_break_33",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "id_drw_order",
+   "fieldtype": "Data",
+   "label": "ID DRW Order",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-06 09:40:17.458635",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Agent Order",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

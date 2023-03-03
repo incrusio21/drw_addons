@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-02-03 10:14:00.550967",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "agent_order",
+  "customer",
+  "nama_agent",
+  "id_drw_agent",
+  "column_break_6",
+  "posting_date",
+  "kelipatan",
+  "total_belanja",
+  "total_point"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming",
+   "options": "DRW-PT-.######",
+   "read_only": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "ID Agent",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "nama_agent",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nama Agent",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.id_drw",
+   "fieldname": "id_drw_agent",
+   "fieldtype": "Data",
+   "label": "ID DRW Agent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "agent_order",
+   "fieldtype": "Link",
+   "label": "ID Agent Order",
+   "options": "Agent Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_belanja",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Belanja",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_point",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Point",
+   "read_only": 1
+  },
+  {
+   "fieldname": "kelipatan",
+   "fieldtype": "Currency",
+   "label": "Kelipatan ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-02-06 11:12:43.259879",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Agent Point Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -95,13 +95,15 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+    "Customer": {
+		"validate": "addons.custom.customer.validate"	
+	},
+	"Delivery Note": {
+		"on_submit": "addons.custom.delivery_note.create_agent_stock_log",		
+		"on_cancel": "addons.custom.delivery_note.delete_log",		
+	}
+}
 
 # Scheduled Tasks
 # ---------------
