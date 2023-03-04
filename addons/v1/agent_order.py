@@ -54,6 +54,7 @@ def create(id_drw, items, data = ""):
 
         doc.set('items', item)
 
+    doc.status = "To Deliver and Bill"
     doc.submit()
 
     return 'Agent Order berhasil dibuat'
