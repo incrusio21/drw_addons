@@ -39,6 +39,19 @@ def clear_so():
         doc = frappe.get_doc("Sales Order", row)
         doc.cancel()
         doc.delete()
+        # frappe.db.commit()
+
+def update_so_status():
+    sales_order = frappe.db.get_all("Sales Order", filters={
+        'docstatus': 1,
+        'status': "Draft"
+    })
+
+    for row in sales_order:
+        print(row.name)
+        doc = frappe.get_doc("Sales Order", row.name)
+        doc.status = "To Deliver and Bill"
+        doc.db_update()
         frappe.db.commit()
 
 
