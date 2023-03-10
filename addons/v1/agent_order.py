@@ -11,7 +11,7 @@ def create(id_drw, items, data = ""):
     # error jika id drw tidak di temukan
     customer = frappe.db.get_value("Customer", {'id_drw' : id_drw}, 'name')
     if not customer:
-        frappe.throw("ID DRW tidak ditemukan. Update data Customer terlebih dahulu") 
+        frappe.throw("ID DRW '{}' tidak ditemukan. Mohon update data Customer terlebih dahulu".format(id_drw)) 
 
     # daftar data diluar item
     body = data if isinstance(data, dict) else json.loads(data if data else "{}")
@@ -43,9 +43,16 @@ def create(id_drw, items, data = ""):
 
     if 'item' in list.keys():
         item = []
-        for row in list['item']:
+        for index, row in enumerate(list['item']):
+            if 'id_item' not in row.keys():
+                frappe.throw("ID Item pada Row {} tidak ditemukan".format(index+1))
+
+            item_name = frappe.db.get_value("Item", { 'id_item_drw': row['id_item']}, 'name')
+            if not item_name:
+                frappe.throw("Item dengan ID Item '{}' tidak ditemukan. Mohon update data Item terlebih dahulu".format(row['id_item']))
+
             item.append({
-                'kode_item': row['kode_item'],
+                'kode_item': item_name,
                 'qty': row['qty'],
                 'price_list': row['price_list'],
                 'discount': row['discount'] if 'discount' in row.keys() else 0.0,

@@ -15,8 +15,10 @@ class AgentOrder(Document):
 	def on_submit(self):
 		from addons.custom.custom_method import is_director
 
+		# jika customer merupakan direktor/parentny direktor. buat sales order dan sales invoice 
 		if is_director(self.customer):
 			doc = frappe.new_doc("Sales Order")
+			doc.id_drw_order = self.id_drw_order
 			doc.customer = self.customer
 			doc.transaction_date = self.tanggal
 			doc.delivery_date = self.tanggal
@@ -57,7 +59,18 @@ class AgentOrder(Document):
 			doc.set('items', items)
 
 			doc.submit()
+
+			# buat sinv dari so
+			from erpnext.selling.doctype.sales_order.sales_order import make_sales_invoice
+
+			sinv = make_sales_invoice(doc.name)
+			sinv.posting_date = self.tanggal
+			sinv.set_posting_time = 1
+			sinv.due_date = frappe.utils.add_days(self.tanggal, 90)
+
+			sinv.submit()
 		else:
+			# jika bukan maka buat stock log
 			upline = frappe.db.get_value("Customer", self.customer, 'upline')
 			for row in self.items:
 				# log customer
@@ -76,6 +89,7 @@ class AgentOrder(Document):
 					doc_upline.id_agent_order = self.name
 					doc_upline.save()
 
+		# cek apakah customer group memiliki nilai pada field kelipatan untuk membuat point log
 		kelipatan = frappe.db.get_value("Customer Group", self.agent_group, 'kelipatan_transaksi_untuk_dapat_point')
 		if kelipatan > 0:
 			point = frappe.new_doc("Agent Point Log")

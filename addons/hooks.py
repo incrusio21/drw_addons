@@ -36,6 +36,10 @@ app_license = "MIT"
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
+
+fixtures = [
+    "Custom Field"
+]
 # Home Pages
 # ----------
 
@@ -180,4 +184,5 @@ user_data_fields = [
 # auth_hooks = [
 #	"addons.auth.validate"
 # ]
+
 

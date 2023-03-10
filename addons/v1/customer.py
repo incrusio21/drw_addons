@@ -8,7 +8,7 @@ from frappe.utils import cstr, date_diff, file_lock, flt, get_datetime_str, now
 def create(id_drw, customer, address = None, contact= None):
     # error jika id drw telah ada
     if frappe.db.exists("Customer", {'id_drw' : id_drw}):
-        return "ID DRW telah digunakan"
+        frappe.throw("ID DRW telah digunakan")
 
     # insert data customer sesuai field
     doc = frappe.new_doc("Customer")
