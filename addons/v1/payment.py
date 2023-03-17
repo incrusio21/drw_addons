@@ -20,7 +20,7 @@ def create(id_drw_order, paid_amount, account_bank = None, posting_date = None):
     # if flt(paid_amount) > invoice.outstanding_amount:
     #     frappe.throw("Jumlah pembayaran melebihi sisa piutang pada Sales Invoice")
 
-    payment = get_payment_entry("Sales Invoice", invoice.name, paid_amount, bank, posting_date=posting_date)
+    payment = get_payment_entry("Sales Invoice", invoice.name, flt(paid_amount), bank, posting_date=posting_date)
 
     payment.reference_no = id_drw_order
     payment.reference_date = payment.posting_date
