@@ -15,7 +15,7 @@ def create(id_drw_order, paid_amount, account_bank = None, posting_date = None):
 
     # buat sinv dari so
     from addons.custom.payment_entry import get_payment_entry
-    invoice = frappe.db.get_value("Sales Invoice", {'id_drw_order' : id_drw_order}, ['name', 'outstanding_amount'])
+    invoice = frappe.db.get_value("Sales Invoice", {'id_drw_order' : id_drw_order}, ['name', 'outstanding_amount'], as_dict=1)
     if paid_amount > invoice.outstanding_amount:
         frappe.throw("Jumlah pembayaran melebihi sisa piutang pada Sales Invoice")
 
