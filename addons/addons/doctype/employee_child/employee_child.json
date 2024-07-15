@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-05-23 10:09:58.980735",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "age",
+  "gender",
+  "education",
+  "occupation"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Age"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Gender"
+  },
+  {
+   "fieldname": "education",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Education"
+  },
+  {
+   "fieldname": "occupation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Occupation"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-05-23 10:09:58.980735",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Employee Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

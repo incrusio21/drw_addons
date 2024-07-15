@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "DRW-STM-.#####",
+ "creation": "2023-04-13 14:19:02.024632",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tahun_berlaku",
+  "tgl_berlaku",
+  "column_break_4",
+  "company",
+  "sales_target"
+ ],
+ "fields": [
+  {
+   "fieldname": "tahun_berlaku",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tahun Berlaku",
+   "options": "Fiscal Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tgl_berlaku",
+   "fieldtype": "Date",
+   "label": "Tanggal Berlaku"
+  },
+  {
+   "fieldname": "sales_target",
+   "fieldtype": "Currency",
+   "label": "Sales Target"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-13 15:21:46.235764",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Sales Target Monthly",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

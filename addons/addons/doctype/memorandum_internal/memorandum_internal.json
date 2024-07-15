@@ -1,0 +1,260 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-08-31 13:33:21.843472",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "company",
+  "dari",
+  "dari_nama",
+  "kepada",
+  "kepada_nama",
+  "column_break_4",
+  "department",
+  "tanggal",
+  "perihal",
+  "lampiran",
+  "section_break_8",
+  "cc",
+  "section_break_10",
+  "isi_memorandum",
+  "pembayaran_section",
+  "bank",
+  "pemilik_rekening",
+  "no_rekening",
+  "approval_section",
+  "checker",
+  "approval_1",
+  "approval_2",
+  "approval_3",
+  "column_break_25",
+  "approval_4",
+  "approval_5",
+  "approval_6",
+  "approval_7",
+  "section_break_18",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "options": "Legal/DRW-Corp/II/.YYYY./.###",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dari",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Dari",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "kepada",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Kepada",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tanggal",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Tanggal",
+   "reqd": 1
+  },
+  {
+   "fieldname": "perihal",
+   "fieldtype": "Data",
+   "label": "Perihal",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lampiran",
+   "fieldtype": "Data",
+   "label": "Lampiran"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cc",
+   "fieldtype": "Table",
+   "label": "CC",
+   "options": "Memorandum Internal CC"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "isi_memorandum",
+   "fieldtype": "Text Editor",
+   "label": "Isi Memorandum",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pembayaran_section",
+   "fieldtype": "Section Break",
+   "label": "Pembayaran"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Link",
+   "label": "Bank",
+   "options": "Bank"
+  },
+  {
+   "fieldname": "pemilik_rekening",
+   "fieldtype": "Data",
+   "label": "Pemilik Rekening"
+  },
+  {
+   "fieldname": "no_rekening",
+   "fieldtype": "Data",
+   "label": "No Rekening"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Memorandum Internal",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "approval_section",
+   "fieldtype": "Section Break",
+   "label": "Approval"
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "dari.employee_name",
+   "fieldname": "dari_nama",
+   "fieldtype": "Data",
+   "label": "Nama",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "kepada.employee_name",
+   "fieldname": "kepada_nama",
+   "fieldtype": "Data",
+   "label": "Nama",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "department.approval_1",
+   "fieldname": "approval_1",
+   "fieldtype": "Link",
+   "label": "Approval 1",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "department.approval_2",
+   "fieldname": "approval_2",
+   "fieldtype": "Link",
+   "label": "Approval 2",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "department.approval_3",
+   "fieldname": "approval_3",
+   "fieldtype": "Link",
+   "label": "Approval 3",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "department.approval_4",
+   "fieldname": "approval_4",
+   "fieldtype": "Link",
+   "label": "Approval 4",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "department.approval_5",
+   "fieldname": "approval_5",
+   "fieldtype": "Link",
+   "label": "Approval 5",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "department.checker",
+   "fieldname": "checker",
+   "fieldtype": "Link",
+   "label": "Checker",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "department.approval_6",
+   "fieldname": "approval_6",
+   "fieldtype": "Link",
+   "label": "Approval 6",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "department.approval_7",
+   "fieldname": "approval_7",
+   "fieldtype": "Link",
+   "label": "Approval 7",
+   "options": "Employee"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-09-14 09:00:24.509724",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Memorandum Internal",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

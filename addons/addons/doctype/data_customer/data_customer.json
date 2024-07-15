@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-26 06:15:11.962287",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "id_drw",
+  "nama_lengkap",
+  "tgl_lahir",
+  "provinsi",
+  "kabupaten",
+  "kecamatan",
+  "desa",
+  "pendapatan",
+  "pekerjaan",
+  "hobi_1",
+  "hobi_2",
+  "hobi_3",
+  "pendidikan",
+  "facebook",
+  "instagram",
+  "tiktok",
+  "twitter",
+  "youtube",
+  "shopee",
+  "tokped",
+  "tiktokshop",
+  "lazada",
+  "bukalapak",
+  "blibli",
+  "marketplace"
+ ],
+ "fields": [
+  {
+   "fieldname": "id_drw",
+   "fieldtype": "Data",
+   "label": "Id DRW"
+  },
+  {
+   "fieldname": "nama_lengkap",
+   "fieldtype": "Data",
+   "label": "Nama Lengkap"
+  },
+  {
+   "fieldname": "tgl_lahir",
+   "fieldtype": "Data",
+   "label": "Tgl Lahir"
+  },
+  {
+   "fieldname": "provinsi",
+   "fieldtype": "Data",
+   "label": "Provinsi"
+  },
+  {
+   "fieldname": "kabupaten",
+   "fieldtype": "Data",
+   "label": "Kabupaten"
+  },
+  {
+   "fieldname": "kecamatan",
+   "fieldtype": "Data",
+   "label": "Kecamatan"
+  },
+  {
+   "fieldname": "desa",
+   "fieldtype": "Data",
+   "label": "Desa"
+  },
+  {
+   "fieldname": "pendapatan",
+   "fieldtype": "Data",
+   "label": "Pendapatan"
+  },
+  {
+   "fieldname": "pekerjaan",
+   "fieldtype": "Data",
+   "label": "Pekerjaan"
+  },
+  {
+   "fieldname": "hobi_1",
+   "fieldtype": "Data",
+   "label": "Hobi 1"
+  },
+  {
+   "fieldname": "hobi_2",
+   "fieldtype": "Data",
+   "label": "Hobi 2"
+  },
+  {
+   "fieldname": "hobi_3",
+   "fieldtype": "Data",
+   "label": "Hobi 3"
+  },
+  {
+   "fieldname": "pendidikan",
+   "fieldtype": "Data",
+   "label": "Pendidikan"
+  },
+  {
+   "fieldname": "facebook",
+   "fieldtype": "Data",
+   "label": "Facebook"
+  },
+  {
+   "fieldname": "instagram",
+   "fieldtype": "Data",
+   "label": "Instagram"
+  },
+  {
+   "fieldname": "tiktok",
+   "fieldtype": "Data",
+   "label": "Tiktok"
+  },
+  {
+   "fieldname": "twitter",
+   "fieldtype": "Data",
+   "label": "Twitter"
+  },
+  {
+   "fieldname": "youtube",
+   "fieldtype": "Data",
+   "label": "Youtube"
+  },
+  {
+   "fieldname": "shopee",
+   "fieldtype": "Data",
+   "label": "Shopee"
+  },
+  {
+   "fieldname": "tokped",
+   "fieldtype": "Data",
+   "label": "Tokped"
+  },
+  {
+   "fieldname": "tiktokshop",
+   "fieldtype": "Data",
+   "label": "Tiktokshop"
+  },
+  {
+   "fieldname": "lazada",
+   "fieldtype": "Data",
+   "label": "Lazada"
+  },
+  {
+   "fieldname": "bukalapak",
+   "fieldtype": "Data",
+   "label": "Bukalapak"
+  },
+  {
+   "fieldname": "blibli",
+   "fieldtype": "Data",
+   "label": "Blibli"
+  },
+  {
+   "fieldname": "marketplace",
+   "fieldtype": "Data",
+   "label": "Marketplace"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-26 06:15:11.962287",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Data Customer",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

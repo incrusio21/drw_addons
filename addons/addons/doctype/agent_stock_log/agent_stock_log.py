@@ -3,27 +3,35 @@
 
 import frappe
 from frappe.model.document import Document
+from frappe.utils import cstr, flt, now, nowdate, nowtime
+
+from addons.custom.item import get_bin
 
 class AgentStockLog(Document):
 	# pass
 	def after_insert(self):
-		stock = frappe.db.get_value('Agent Stock Bin', {'item_code': self.item_code, 'customer': self.customer}, 'name')
-		if stock:
-			bin = frappe.get_doc('Agent Stock Bin', stock)
-			bin.qty += self.qty
-		else:
-			bin = frappe.get_doc({
-				'doctype': "Agent Stock Bin",
-				'item_code': self.item_code,
-				'customer': self.customer,
-				'qty': self.qty
-			})
+		self.update_bin()
+		
+	def after_delete(self):
+		self.update_bin()
 
-		bin.save()
+	def update_bin(self):
+		bin = get_bin(self.item_code, self.customer)
 
-	def on_trash(self):
-		stock = frappe.db.get_value('Agent Stock Bin', {'item_code': self.item_code, 'customer': self.customer}, 'name')
-		if stock:
-			bin = frappe.get_doc('Agent Stock Bin', stock)
-			bin.qty -= self.qty
-			bin.save()
+		actulal_stock = frappe.db.sql("""
+			SELECT 
+				SUM(qty)
+			FROM `tabAgent Stock Log` 
+			WHERE 
+				item_code= %s AND customer= %s
+		""",
+			(self.item_code, self.customer)
+		)
+
+		actulal_stock = flt(actulal_stock[0][0]) if actulal_stock else 0
+
+		if bin.qty != actulal_stock:
+			bin.qty = actulal_stock
+
+			bin.modified = now()
+			bin.db_update()

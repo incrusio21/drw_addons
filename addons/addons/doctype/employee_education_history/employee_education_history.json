@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-05-23 10:13:26.687815",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "education",
+  "school_name",
+  "major",
+  "city",
+  "graduate_year",
+  "note"
+ ],
+ "fields": [
+  {
+   "fieldname": "education",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Education"
+  },
+  {
+   "fieldname": "school_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "School Name"
+  },
+  {
+   "fieldname": "major",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Major"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "City"
+  },
+  {
+   "fieldname": "graduate_year",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Graduate Year"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Note"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-05-23 10:13:26.687815",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Employee Education History",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,90 @@
+<style>
+	.print-format table, .print-format tr, 
+	.print-format td, .print-format div, .print-format p {
+		line-height: 150%;
+		vertical-align: middle;
+	}
+	@media screen {
+		.print-format {
+			width: 4in;
+			padding: 0.25in;
+			min-height: 8in;
+		}
+	}
+</style>
+<link type="text/css" rel="stylesheet" href="/assets/frappe/css/font-awesome.css">
+{% for row in doc.detail %}
+    {% set dn = frappe.get_doc("Delivery Note", row.id_delivery_note) %}
+    {% set sinv = dn.items|selectattr("against_sales_invoice")|map(attribute='against_sales_invoice')|unique|list %}
+    
+    <div class="page-break" style="display: flex; flex-direction: column; flex: 1 1 0%;">
+        <table style="width: 100%;font-size:inherit;border: 1px dashed #000 !important;">
+            <tr>
+                <td>
+                    <table style="width:100%;font-size:inherit;">
+                        <col style="width: 50%;" />
+                        <col style="width: 50%;" />
+                        <tr>
+                            <td style="border-bottom: 1px solid #000 !important;">
+                                <img src="data:image/svg+xml;base64, {{ get_qr_svg_code(row.id_delivery_note) }}" style="width: 100px !important;">
+                            </td>
+                            <td style="border-bottom: 1px solid #000 !important;vertical-align: middle !important;">
+                                <img src="/files/drw skincare .png" style="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0px !important">
+                                <i class="fa fa-tag" aria-hidden="true"></i>
+                                {{ dn.items|selectattr("against_sales_order")|map(attribute='against_sales_order')|unique|list|join(", ")  }}
+                            </td>
+                            <td class="text-right" style="padding: 0px !important">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                {{ frappe.utils.format_datetime(frappe.utils.now(), "dd-mm-yyyy HH:MM:SS")  }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0px !important">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                {{ dn.customer_name }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0px !important;">
+                                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                {{ dn.get_formatted("contact_mobile") or "-" }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #000 !important;" colspan="2">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i> To :
+                                <div style="padding-top: 5px;padding-left: 13px; font-weight: 600;overflow-wrap: anywhere;">
+                                    {{ dn.get_formatted("shipping_address") }}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #000 !important;overflow-wrap: anywhere;">
+                                <i class="fa fa-home" aria-hidden="true"></i> From :
+                                <div style="padding-top: 5px;padding-left: 13px;">
+                                    {{ dn.get_formatted("address_display") }}
+                                </div>
+                            </td>
+                            <td style="border: 1px solid #000 !important;">
+                                <i class="fa fa-truck"> </i> Ekspedisi:
+                                <div style="padding-top: 5px;padding-left: 13px;">
+                                    {{ frappe.db.get_value("Sales Invoice", sinv[0], "nama_kurir") if sinv else "-" }}
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endfor %}

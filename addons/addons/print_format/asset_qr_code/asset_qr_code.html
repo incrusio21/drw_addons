@@ -1,0 +1,61 @@
+{% set qr_code_assets = doc.reference|get_qr_svg_code_asset %}
+
+<div>
+    <table style="width:100%;font-size:inherit">
+        <col style="width: 20%;" />
+        <col style="width: 29%;" />
+        <col style="width: 2%;" />
+        <col style="width: 20%;" />
+        <col style="width: 29%;" />
+        {% for row in qr_code_assets %}
+        <tr style="page-break-inside: avoid;">
+            {% for qr in qr_code_assets[row] %}
+            {% if not loop.first %}
+            <td></td>
+            {% endif %}
+            <td style="padding: 0px !important;border-left: 2px solid #000 !important;border-top: 2px solid #000 !important;border-bottom: 2px solid #000 !important;">
+                <img src="data:image/svg+xml;base64, {{ qr['qr'] }}">
+            </td>
+            <td style="padding: 3px !important;border-right: 2px solid #000 !important;border-top: 2px solid #000 !important;border-bottom: 2px solid #000 !important;vertical-align:middle !important;">
+                <img src="https://skincare.drwhub.com/files/drwcorp.png" style="width: 70% !important">
+                <b>
+                    <p>
+                        PROPERTY OF
+                    </p>
+                    <p style="font-size: 8px;">
+                        PT. DRW CORPORA INDONESIA
+                    </p>
+                    <p style="color: #EC4F96;">
+                        {{ qr['name'] }}
+                    </p>
+                </b>
+            </td>
+
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        <!-- <tr style="page-break-inside: avoid;">
+            <td style="padding: 0px !important;border-left: 2px solid #000 !important;border-top: 2px solid #000 !important;border-bottom: 2px solid #000 !important;">
+                <img src="data:image/svg+xml;base64,{{ get_qr_svg_code(doc.name) }}">
+            </td>
+            <td style="padding: 3px !important;border-right: 2px solid #000 !important;border-top: 2px solid #000 !important;border-bottom: 2px solid #000 !important;vertical-align:middle !important;">
+                <img src="https://skincare.drwhub.com/private/files/drwcorp.png" style="width: 70% !important">
+                <b>
+                    <p>
+                        PROPERTY OF
+                    </p>
+                    <p style="font-size: 8px;">
+                        PT. DRW CORPORA INDONESIA
+                    </p>
+                    <p style="color: #EC4F96;">
+                        {{ doc.name }}
+                    </p>
+                </b>
+            </td>
+            <td></td>
+            <td style="border: 2px solid #000 !important;">
+                {{ doc.name }}
+            </td>
+        </tr> -->
+    </table>
+</div>

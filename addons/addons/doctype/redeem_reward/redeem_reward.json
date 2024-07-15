@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-01-04 15:16:31.995973",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "company",
+  "bc",
+  "bc_name",
+  "remaining_points",
+  "column_break_5",
+  "posting_date",
+  "reward_item",
+  "required_points",
+  "final_points",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "bc",
+   "fieldtype": "Link",
+   "label": "BC",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "bc.customer_name",
+   "fieldname": "bc_name",
+   "fieldtype": "Data",
+   "label": "BC Name"
+  },
+  {
+   "fetch_from": "bc.remaining_point",
+   "fieldname": "remaining_points",
+   "fieldtype": "Float",
+   "label": "Remaining Points",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reward_item",
+   "fieldtype": "Link",
+   "label": "Reward Item",
+   "options": "Reward Item"
+  },
+  {
+   "fetch_from": "reward_item.required_points",
+   "fieldname": "required_points",
+   "fieldtype": "Float",
+   "label": "Required Points",
+   "read_only": 1
+  },
+  {
+   "fieldname": "final_points",
+   "fieldtype": "Float",
+   "label": "Final Points",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Redeem Reward",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "DRW-REW-.YY.-"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-19 13:58:48.659356",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Redeem Reward",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

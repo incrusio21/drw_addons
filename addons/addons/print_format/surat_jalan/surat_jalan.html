@@ -1,0 +1,97 @@
+
+{% for row in doc.detail %}
+    {% set dn = frappe.get_doc("Delivery Note", row.id_delivery_note) %}
+    <div class="page-break" style="display: flex; flex-direction: column; flex: 1 1 0%;">
+        <div id="header-html" class="hidden-pdf">
+		    <div class="print-heading">				
+                <h2>
+                    <div>Delivery Note</div><br>
+                    <small class="sub-heading">{{ row.id_delivery_note }}</small>				
+                </h2>
+            </div>
+            <div class="text-center" document-status="draft">
+                <h4 style="margin: 0px;">DRAFT</h4>
+            </div>
+        </div>
+        <div class="row section-break" data-label="Delivery To">
+			<div class="col-xs-6 column-break">
+                <div class="row important data-field" data-fieldname="customer_name" data-fieldtype="Data">
+                    <div class="col-xs-5">					
+                        <label>Customer Name: </label>
+                    </div>
+                    <div class="col-xs-7 value">
+                        {{ dn.get_formatted("customer_name") }}
+                    </div>
+                </div>
+			</div>
+			<div class="col-xs-6 column-break">
+                <div class="row  data-field" data-fieldname="posting_date" data-fieldtype="Date">
+                    <div class="col-xs-5">					
+                        <label>Date: </label>
+                    </div>
+                    <div class="col-xs-7 value">
+                        {{ dn.get_formatted("posting_date") }}
+                    </div>
+                </div>
+			</div>
+    	</div>
+        <div class="row section-break" data-label="">
+			<div class="col-xs-12 column-break">
+				<div data-fieldname="items" data-fieldtype="Table">
+                    <table class="table table-bordered table-condensed">
+                        <thead>
+                            <tr>
+                                <th style="width: 40px" class="table-sr">Sr</th>
+                                <th style="width: 150px;" class="" data-fieldname="items" data-fieldtype="Table">Item Code</th>
+                                <th style="width: 100px;" class="text-right" data-fieldname="items" data-fieldtype="Table">Quantity</th>
+                                <th style="width: 100px;" class="text-right" data-fieldname="items" data-fieldtype="Table">Checklist</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in dn.items %}
+                            <tr>
+                                <td class="table-sr">{{ item.idx }}</td>
+                                <td class="" data-fieldname="items" data-fieldtype="Table">
+                                    <div class="value">{{ item.get_formatted("item_code") }}</div>
+                                </td>
+                                <td class="text-right" data-fieldname="items" data-fieldtype="Table">
+                                    <div class="value">
+                                        <small class="pull-left">{{ item.get_formatted("uom") }}</small>
+                                        {{ item.get_formatted("qty") }}
+                                    </div>
+                                </td>
+                                <td class="text-right" style="padding-top: 2px !important;padding-bottom: 0 !important;font-size: large;">&#9744;</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+			</div>    
+    	</div>
+
+        <div class="row section-break" data-label="">
+            <div class="col-xs-12 column-break">
+                <div class="row  data-field" data-fieldname="total_qty" data-fieldtype="Float">
+                    <div class="col-xs-5">              
+                        <label>Total Quantity: </label>
+                    </div>
+                    <div class="col-xs-7 text-right value">{{ dn.get_formatted("total_qty") }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row section-break" data-label="">
+			<div class="col-xs-6 column-break">
+			</div>
+			<div class="col-xs-6 column-break">
+    			<div class="row  data-field" data-fieldname="grand_total" data-fieldtype="Currency">
+	    			<div class="col-xs-5">		
+		    			<label>Grand Total: </label>
+    				</div>
+	    			<div class="col-xs-7 text-right value">	
+                        {{ dn.get_formatted("grand_total") }}
+                    </div>
+                </div>			
+			</div>
+    	</div>
+    </div>
+{% endfor %}

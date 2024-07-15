@@ -5,6 +5,7 @@ import frappe
 from frappe.utils import (
 	nowdate,
 )
+from erpnext import get_default_company
 
 @frappe.whitelist()
 def create(id_drw, items, data = ""):
@@ -20,6 +21,8 @@ def create(id_drw, items, data = ""):
     doc.set('customer', customer)
     doc.tanggal = body['tanggal'] if 'tanggal' in body.keys() else nowdate()
     doc.id_drw_order = body['id_drw_order'] if 'id_drw_order' in body.keys() else ''
+    doc.company = body['company'] if 'company' in body.keys() else get_default_company()
+    doc.dc = body['dc'] if 'dc' in body.keys() else ''
 
     #daftar data yang memiliki hbungan dengan item 
     list =  items if isinstance(items, dict) else json.loads(items)
@@ -62,6 +65,9 @@ def create(id_drw, items, data = ""):
         doc.set('items', item)
 
     doc.status = "To Deliver and Bill"
-    doc.submit()
+    try:
+        doc.submit()
+    except Exception as e:
+        frappe.error_log("Error Create SO from Agent Order", e)
 
     return 'Agent Order berhasil dibuat'

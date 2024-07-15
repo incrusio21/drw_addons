@@ -1,0 +1,44 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-05-23 10:08:19.364608",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "merk",
+  "police_no",
+  "driving_license_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "merk",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Merk"
+  },
+  {
+   "fieldname": "police_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Police No"
+  },
+  {
+   "fieldname": "driving_license_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Driving License No"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-05-23 10:08:19.364608",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Employee Vehicle",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -17,7 +17,7 @@ def create(id_drw_order, data):
     if 'items' not in body or len(body['items']) == 0:
         frappe.throw("Harus tedapat minimal satu items untuk membuat Delivery Note")
 
-    # buat sinv dari so
+    # buat dn dari so
     from erpnext.selling.doctype.sales_order.sales_order import make_delivery_note
     order = frappe.db.get_value("Sales Order", {'id_drw_order' : id_drw_order}, 'name')
     dn = make_delivery_note(order)
@@ -48,6 +48,23 @@ def create(id_drw_order, data):
         dn_items.append(row)
 
     dn.items = dn_items
+    
+    # hapus smua actual taxes and charges jika sudah pernah ada dn
+    if frappe.db.exists("Delivery Note Item", {"against_sales_order" : order, "docstatus" : 1}):
+        for row in dn.get("taxes", { "charge_type": "Actual" }):
+            dn.remove(row)
+
+    # ubah nilai diskon sesuai dgn total barang kirim
+    if dn.additional_discount_percentage == 0 and dn.discount_amount != 0:
+        total_before_disc = frappe.db.get_value("Sales Order", {'id_drw_order' : id_drw_order}, 'total')
+        new_disc_amount = 0
+        
+        for row in dn.items:
+            distributed_amount = dn.discount_amount * row.amount / total_before_disc
+            new_disc_amount += distributed_amount
+        
+        # memastikan
+        dn.discount_amount = new_disc_amount
 
     dn.submit()
 

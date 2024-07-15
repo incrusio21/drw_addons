@@ -1,0 +1,343 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-09-11 09:55:29.943772",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "account",
+  "section_break_2",
+  "budget_column",
+  "januari",
+  "februari",
+  "maret",
+  "april",
+  "mei",
+  "juni",
+  "juli",
+  "agustus",
+  "september",
+  "oktober",
+  "november",
+  "desember",
+  "realisasi_column",
+  "r_januari",
+  "r_februari",
+  "r_maret",
+  "r_april",
+  "r_mei",
+  "r_juni",
+  "r_juli",
+  "r_agustus",
+  "r_september",
+  "r_oktober",
+  "r_november",
+  "r_desember",
+  "column_break_9",
+  "_januari",
+  "_februari",
+  "_maret",
+  "_april",
+  "_mei",
+  "_juni",
+  "_juli",
+  "_agustus",
+  "_september",
+  "_oktober",
+  "_november",
+  "_desember",
+  "section_break_16",
+  "total_budget"
+ ],
+ "fields": [
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "januari",
+   "fieldtype": "Currency",
+   "label": "Januari"
+  },
+  {
+   "default": "0",
+   "fieldname": "februari",
+   "fieldtype": "Currency",
+   "label": "Februari"
+  },
+  {
+   "default": "0",
+   "fieldname": "maret",
+   "fieldtype": "Currency",
+   "label": "Maret"
+  },
+  {
+   "default": "0",
+   "fieldname": "april",
+   "fieldtype": "Currency",
+   "label": "April"
+  },
+  {
+   "default": "0",
+   "fieldname": "mei",
+   "fieldtype": "Currency",
+   "label": "Mei"
+  },
+  {
+   "default": "0",
+   "fieldname": "juni",
+   "fieldtype": "Currency",
+   "label": "Juni"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break",
+   "label": "Persentase Realisasi vs Budget"
+  },
+  {
+   "default": "0",
+   "fieldname": "juli",
+   "fieldtype": "Currency",
+   "label": "Juli"
+  },
+  {
+   "default": "0",
+   "fieldname": "agustus",
+   "fieldtype": "Currency",
+   "label": "Agustus"
+  },
+  {
+   "default": "0",
+   "fieldname": "september",
+   "fieldtype": "Currency",
+   "label": "September"
+  },
+  {
+   "default": "0",
+   "fieldname": "oktober",
+   "fieldtype": "Currency",
+   "label": "Oktober"
+  },
+  {
+   "default": "0",
+   "fieldname": "november",
+   "fieldtype": "Currency",
+   "label": "November"
+  },
+  {
+   "default": "0",
+   "fieldname": "desember",
+   "fieldtype": "Currency",
+   "label": "Desember"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_budget",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Budget",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "_januari",
+   "fieldtype": "Float",
+   "label": "% Januari",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "_februari",
+   "fieldtype": "Float",
+   "label": "% Februari",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "_maret",
+   "fieldtype": "Float",
+   "label": "% Maret",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "_april",
+   "fieldtype": "Float",
+   "label": "% April",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "_mei",
+   "fieldtype": "Float",
+   "label": "% Mei",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "_juni",
+   "fieldtype": "Float",
+   "label": "% Juni",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "_juli",
+   "fieldtype": "Float",
+   "label": "% Juli",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "_agustus",
+   "fieldtype": "Float",
+   "label": "% Agustus",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "_september",
+   "fieldtype": "Float",
+   "label": "% September",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "_oktober",
+   "fieldtype": "Float",
+   "label": "% Oktober",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "_november",
+   "fieldtype": "Float",
+   "label": "% November",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "_desember",
+   "fieldtype": "Float",
+   "label": "% Desember",
+   "read_only": 1
+  },
+  {
+   "fieldname": "realisasi_column",
+   "fieldtype": "Column Break",
+   "label": "Realisasi"
+  },
+  {
+   "default": "0",
+   "fieldname": "r_januari",
+   "fieldtype": "Currency",
+   "label": "Januari",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "r_februari",
+   "fieldtype": "Currency",
+   "label": "Februari",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "r_maret",
+   "fieldtype": "Currency",
+   "label": "Maret",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "r_april",
+   "fieldtype": "Currency",
+   "label": "April",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "r_mei",
+   "fieldtype": "Currency",
+   "label": "Mei",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "r_juni",
+   "fieldtype": "Currency",
+   "label": "Juni",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "r_juli",
+   "fieldtype": "Currency",
+   "label": "Juli",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "r_agustus",
+   "fieldtype": "Currency",
+   "label": "Agustus",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "r_september",
+   "fieldtype": "Currency",
+   "label": "September",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "r_oktober",
+   "fieldtype": "Currency",
+   "label": "Oktober",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "r_november",
+   "fieldtype": "Currency",
+   "label": "November",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "r_desember",
+   "fieldtype": "Currency",
+   "label": "Desember",
+   "read_only": 1
+  },
+  {
+   "fieldname": "budget_column",
+   "fieldtype": "Column Break",
+   "label": "Budget"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-04-03 22:13:25.323093",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Form Budget Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

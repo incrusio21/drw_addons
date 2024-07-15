@@ -1,6 +1,11 @@
 from __future__ import unicode_literals
 import frappe
 from frappe import _
+from frappe.utils import getdate
+
+def day_of_week(_date):
+    weekdays = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"]
+    return weekdays[getdate(_date).weekday()]
 
 def clear_customer():
     def get_customer(name):
@@ -40,6 +45,20 @@ def clear_so():
         doc.cancel()
         doc.delete()
         # frappe.db.commit()
+
+def clear_stock():
+    list_doctype = ["Purchase Receipt"]
+    for doctype in list_doctype:
+        list_docs = frappe.db.sql("SELECT name,docstatus FROM `tab{}` order by posting_date desc".format(doctype),as_dict=1)
+        for d in list_docs:
+            # doc = frappe.get_doc(doctype, d.name)
+            try:
+                # doc.cancel()
+                frappe.delete_doc(doctype, d.name,force=1)
+                print(d.name)   
+                frappe.db.commit()
+            except Exception as e:
+                print(e)
 
 def update_so_status():
     sales_order = frappe.db.get_all("Sales Order", filters={

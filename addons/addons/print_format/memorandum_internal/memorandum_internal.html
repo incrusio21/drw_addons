@@ -1,0 +1,157 @@
+<style>
+    .print-format {
+        padding: 0 !important;
+    }
+    
+    .page-break {
+        min-height: 100vh;
+        background-image: url("https://skincare.drwhub.com/files/letterhead%20DRWCORP.png");
+        background-size: cover;
+        -webkit-print-color-adjust: exact;
+        -moz-print-color-adjust: exact;
+        -ms-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .page-break .body {
+        padding-top: 120px;
+        padding-left: 100px;
+        padding-right: 100px;
+    } 
+</style>
+<div class="page-break">
+    <div class="body">
+        <div class="text-center" style="padding-bottom: 10px;">
+            <h4 style="margin-bottom: 0px !important;"><u>MEMORANDUM INTERNAL</u></h4>
+            <b>Nomor : {{ doc.name }}</b>
+        </div>
+        <table style="width:100%;font-size:inherit">
+            <col style="width: 30%;" />
+            <col style="width: 70%;" />
+            <tr>
+                <td style="padding-left: 0px !important;">Dari</td>
+                <td style="padding-left: 0px !important;">: {{ doc.dari_nama }}</td>
+            </tr>
+            <tr>
+                <td style="padding-left: 0px !important;">Kepada</td>
+                <td style="padding-left: 0px !important;">: {{ doc.kepada_nama }}</td>
+            </tr>
+            <tr>
+                <td style="padding-left: 0px !important;">Hari/Tanggal</td>
+                <td style="padding-left: 0px !important;">: {{ frappe.utils.format_date(doc.tanggal, "EEEE, d MMM YYYY")  }}</td>
+            </tr>
+            <tr>
+                <td style="padding-left: 0px !important;">Cc</td>
+                <td style="padding-left: 0px !important;">: {{ doc.cc|join(', ', attribute='cc') }}</td>
+            </tr>
+            <tr>
+                <td style="padding-left: 0px !important;">Perihal</td>
+                <td style="padding-left: 0px !important;">: {{ doc.perihal }}</td>
+            </tr>
+            <tr>
+                <td style="padding-left: 0px !important;">Lampiran</td>
+                <td style="padding-left: 0px !important;">: {{ doc.lampiran or "" }}</td>
+            </tr>
+        </table>
+        <div style="padding-top: 10px;">
+            Dengan Hormat,
+            {{ doc.isi_memorandum }}
+            Pembayaran dapat ditransferkan langsung ke nomor rekening sebagai berikut:
+        </div>
+        <table style="width:100%;font-size:inherit">
+            <col style="width: 5%;" />
+            <col style="width: 25%;" />
+            <col style="width: 70%;" />
+            <tr>
+                <td class="text-right" style="padding: 2px !important;"><b>-</b></td>
+                <td style="padding: 2px !important;"><b>Bank</b></td>
+                <td style="padding: 2px !important;"><b>: {{ doc.bank or "" }}</b></td>
+            </tr>
+            <tr>
+                <td class="text-right" style="padding: 2px !important;"><b>-</b></td>
+                <td style="padding: 2px !important;"><b>Pemilik Rekening</b></td>
+                <td style="padding: 2px !important;"><b>: {{ doc.pemilik_rekening or "" }}</b></td>
+            </tr>
+            <tr>
+                <td class="text-right" style="padding: 2px !important;"><b>-</b></td>
+                <td style="padding: 2px !important;"><b>No Rekening</b></td>
+                <td style="padding: 2px !important;"><b>: {{ doc.no_rekening or "" }}</b></td>
+            </tr>
+        </table>
+        <div>
+            Demikian permohonan ini kami ajukan, atas perhatian dan kerjasamany kami ucapkan terima kasih.
+        </div>
+        {% set signature = [
+            {"emp": doc.dari, "type": "Mengajukan"}, 
+            {"emp": doc.approval_1, "type": "Mengetahui"}, {"emp": doc.approval_2, "type": "Mengetahui"}, 
+            {"emp": doc.approval_3, "type": "Mengetahui"}, {"emp": doc.approval_4, "type": "Mengetahui"}, 
+            {"emp": doc.approval_5, "type": "Mengetahui"}, {"emp": doc.approval_6, "type": "Mengetahui"},
+            {"emp": doc.approval_7, "type": "Menyetujui"}
+        ]|rejectattr("emp", "none")|list %}
+        {% if signature %}
+        <table style="width:100%;font-size:inherit;margin-top: 10px">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            {% for row in range(
+                ((signature|length) / 2)|int) %}
+                {% set index = row*2 %}
+                {% set even_emp = frappe.db.get_value("Employee", signature[index].emp, ["first_name","designation"], as_dict=1) %}
+                {% set odd_emp = frappe.db.get_value("Employee", signature[index+1].emp, ["first_name","designation"], as_dict=1) %}
+                <tr>
+                    <td class="text-center" style="padding-left: 0px !important;">{{ signature[index].type }}</td>
+                    <td class="text-center" style="padding-left: 0px !important;">{{ signature[index+1].type }}</td>
+                </tr>
+                
+                <tr>
+                    <td class="text-center" style="padding: 0px !important;"><b><u>
+                        {% if even_emp.first_name %}
+                        {% set qr = "Ditandatangani Oleh: \n" + 
+                                    even_emp.first_name + 
+                                    "\nTanda tangan digital ini adalah bukti\nyang sah dan dapat dipertanggung\njawabkan dalam lingkup perusahaan \n" + 
+                                    doc.company %}
+                        <img src="data:image/svg+xml;base64, {{ get_qr_svg_code(qr) }}" style="width: 100px !important;">
+                        {% endif %}</u></b>
+                    </td>
+                    <td class="text-center" style="padding: 0px !important;"><b><u>
+                        {% if odd_emp.first_name %}
+                        {% set qr = "Ditandatangani Oleh: \n" + 
+                        odd_emp.first_name + 
+                                    "\nTanda tangan digital ini adalah bukti\nyang sah dan dapat dipertanggung\njawabkan dalam lingkup perusahaan \n" + 
+                                    doc.company %}
+                        <img src="data:image/svg+xml;base64, {{ get_qr_svg_code(qr) }}" style="width: 100px !important;">
+                        {% endif %}</u></b>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="text-center" style="padding: 0px !important;">{{ even_emp.designation or "-" }}</td>
+                    <td class="text-center" style="padding: 0px !important;">{{ odd_emp.designation or "-" }}</td>
+                </tr>
+                {% if loop.last and signature|length is odd %}
+                    {% set last_emp = frappe.db.get_value("Employee", signature[index+2].emp, ["first_name","designation"], as_dict=1) %}
+
+                    <tr>
+                        <td colspan="2" class="text-center" style="padding: 0px !important;">{{ signature[index+2].type }}</td>
+                        
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center" style="padding: 0px !important;"><b><u>
+                            {% if last_emp.first_name %}
+                            {% set qr = "Ditandatangani Oleh: \n" + 
+                                        last_emp.first_name + 
+                                        "\nTanda tangan digital ini adalah bukti\nyang sah dan dapat dipertanggung\njawabkan dalam lingkup perusahaan \n" + 
+                                        doc.company %}
+                            <img src="data:image/svg+xml;base64, {{ get_qr_svg_code(qr) }}" style="width: 100px !important;">
+                            {% endif %}</u></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center" style="padding: 0px !important;">{{ last_emp.designation or "-" }}</td>
+                    </tr>
+                {% endif %}    
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
+</div>
+

@@ -1,0 +1,81 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:reward_name",
+ "creation": "2023-09-25 14:25:45.505387",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reward_name",
+  "reward_group",
+  "required_points",
+  "column_break_4",
+  "company",
+  "detail_reward",
+  "image"
+ ],
+ "fields": [
+  {
+   "fieldname": "reward_name",
+   "fieldtype": "Data",
+   "label": "Reward Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "reward_group",
+   "fieldtype": "Link",
+   "label": "Reward Group",
+   "options": "Reward Group"
+  },
+  {
+   "fieldname": "required_points",
+   "fieldtype": "Float",
+   "label": "Required Points"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "detail_reward",
+   "fieldtype": "Small Text",
+   "label": "Detail Reward"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-05 14:30:13.973564",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Reward Item",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

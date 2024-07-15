@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-05-23 10:09:10.215327",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "period",
+  "end_period",
+  "company_name_and_address",
+  "position",
+  "end_position",
+  "salary",
+  "reason"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "period",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Early Period"
+  },
+  {
+   "columns": 1,
+   "fieldname": "end_period",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "End Period"
+  },
+  {
+   "fieldname": "company_name_and_address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Company Name and Address"
+  },
+  {
+   "columns": 1,
+   "fieldname": "position",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Early Position"
+  },
+  {
+   "columns": 1,
+   "fieldname": "end_position",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "End Position"
+  },
+  {
+   "fieldname": "salary",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Salary"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reason"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-05-23 10:09:10.215327",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Employee Work Experience",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

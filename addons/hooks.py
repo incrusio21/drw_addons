@@ -28,10 +28,20 @@ app_license = "MIT"
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 
 # include js in page
-# page_js = {"page" : "public/js/file.js"}
+page_js = {
+    "point-of-sale" : "public/js/page/point_of_sale.js"
+}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+    "Travel Request" : "public/js/travel_request.js",
+    "Sales Order" : "public/js/sales_order.js",
+    "Sales Invoice" : "public/js/sales_invoice.js",
+    "Therapy Session" : "public/js/therapy_session.js",
+    "Material Request" : "public/js/material_request.js",
+    "POS Opening Entry": "public/js/pos_opening_entry.js",
+}
+
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -87,6 +97,15 @@ fixtures = [
 #	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
 
+jenv = {
+    "filters": [
+        "get_qr_svg_code_asset:addons.jinja.get_qr_svg_code_asset",
+	],
+    "methods": [
+        "get_qr_svg_code:addons.jinja.get_qr_svg_code",
+	]
+}
+
 # DocType Class
 # ---------------
 # Override standard doctype classes
@@ -100,13 +119,31 @@ fixtures = [
 # Hook on document methods and events
 
 doc_events = {
+    "Travel Request": {
+		"validate": "addons.custom.travel_request.validate"	
+	},
+    "Patient": {
+		"on_update": "addons.custom.patient.update_customer"	
+	},
     "Customer": {
 		"validate": "addons.custom.customer.validate"	
+	},
+    "Sales Order": {
+		"before_validate": "addons.custom.sales_order.validate_coin",		
+		"on_submit": ["addons.custom.sales_order.agent_coin_log", "addons.custom.sales_order.make_invoice"],		
+		"on_cancel": ["addons.custom.sales_order.agent_coin_log", "addons.custom.sales_order.agent_point_log","addons.custom.sales_order.remove_invoice"],		
 	},
 	"Delivery Note": {
 		"on_submit": "addons.custom.delivery_note.create_agent_stock_log",		
 		"on_cancel": "addons.custom.delivery_note.delete_log",		
-	}
+	},
+    "Item": {
+        "before_rename": "addons.custom.item.delete_old_agent_stock_bin",
+        "after_rename": "addons.custom.item.recalculate_agent_stock_bin",
+	},
+    "GL Entry": {
+		"on_submit": "addons.custom.gl_entry.cek_form_budget",
+	},
 }
 
 # Scheduled Tasks
@@ -138,9 +175,10 @@ doc_events = {
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-#	"frappe.desk.doctype.event.event.get_events": "addons.event.get_events"
-# }
+override_whitelisted_methods = {
+	"erpnext.selling.page.point_of_sale.point_of_sale.get_items": "addons.custom.page.point_of_sale.get_items",
+    "erpnext.accounts.doctype.sales_invoice.sales_invoice.make_delivery_note": "addons.custom.sales_invoice.make_delivery_note"
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,

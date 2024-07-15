@@ -35,9 +35,11 @@
   {
    "fieldname": "item_code",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Item Code",
    "options": "Item",
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fetch_from": "item_code.item_name",
@@ -49,9 +51,11 @@
   {
    "fieldname": "customer",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "ID Beauty Consultant",
    "options": "Customer",
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "qty",
@@ -78,7 +82,7 @@
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-25 16:45:44.976090",
+ "modified": "2023-04-03 15:27:02.049551",
  "modified_by": "Administrator",
  "module": "Addons",
  "name": "Agent Stock Bin",

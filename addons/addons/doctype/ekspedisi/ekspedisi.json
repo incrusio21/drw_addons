@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{nama_ekspedisi}-{drop_center}",
+ "creation": "2024-01-29 10:11:05.920594",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "drop_center",
+  "warehouse",
+  "nama_ekspedisi",
+  "column_break_4",
+  "kurir"
+ ],
+ "fields": [
+  {
+   "fieldname": "drop_center",
+   "fieldtype": "Link",
+   "label": "Drop Center",
+   "options": "Drop Center",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "drop_center.warehouse",
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "nama_ekspedisi",
+   "fieldtype": "Data",
+   "label": "Nama Ekspedisi",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "kurir",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Kurir",
+   "options": "Kurir",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-31 10:27:20.128938",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Ekspedisi",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

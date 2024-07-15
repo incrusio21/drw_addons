@@ -1,0 +1,155 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "DRW-RC-.####",
+ "creation": "2023-07-07 14:15:15.769434",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "beauty_consultant",
+  "id_bc_drw",
+  "column_break_3",
+  "nama_bc",
+  "section_break_4",
+  "nama_rumah_cantik",
+  "provinsi",
+  "kabupaten_kota",
+  "no_hp",
+  "no_telp",
+  "email",
+  "column_break_11",
+  "instagram",
+  "facebook",
+  "google_maps_rc",
+  "latitude_",
+  "longitude_",
+  "alamat_lengkap"
+ ],
+ "fields": [
+  {
+   "fieldname": "beauty_consultant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Beauty Consultant",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "beauty_consultant.customer_name",
+   "fieldname": "nama_bc",
+   "fieldtype": "Data",
+   "label": "Nama BC",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "beauty_consultant.id_drw",
+   "fieldname": "id_bc_drw",
+   "fieldtype": "Data",
+   "label": "ID BC DRW",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "nama_rumah_cantik",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nama Rumah Cantik",
+   "reqd": 1
+  },
+  {
+   "fieldname": "provinsi",
+   "fieldtype": "Link",
+   "label": "Provinsi",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "kabupaten_kota",
+   "fieldtype": "Link",
+   "label": "Kabupaten Kota",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "no_hp",
+   "fieldtype": "Data",
+   "label": "No HP"
+  },
+  {
+   "fieldname": "no_telp",
+   "fieldtype": "Data",
+   "label": "No Telp"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "instagram",
+   "fieldtype": "Data",
+   "label": "Instagram"
+  },
+  {
+   "fieldname": "facebook",
+   "fieldtype": "Data",
+   "label": "Facebook"
+  },
+  {
+   "fieldname": "google_maps_rc",
+   "fieldtype": "Data",
+   "label": "Google Maps RC"
+  },
+  {
+   "fieldname": "alamat_lengkap",
+   "fieldtype": "Small Text",
+   "label": "Alamat Lengkap"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "latitude_",
+   "fieldtype": "Float",
+   "label": "Latitude",
+   "precision": "9"
+  },
+  {
+   "fieldname": "longitude_",
+   "fieldtype": "Float",
+   "label": "Longitude",
+   "precision": "9"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-07 14:52:23.246271",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Rumah Cantik",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

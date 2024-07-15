@@ -24,6 +24,7 @@ def create(id_drw_order, paid_amount, account_bank = None, posting_date = None):
 
     payment.reference_no = id_drw_order
     payment.reference_date = payment.posting_date
+
     payment.submit()
 
     return 'Payment Berhasi dibuat'

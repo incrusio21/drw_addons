@@ -3,7 +3,7 @@
  "charts": [],
  "creation": "2023-03-10 14:46:32.037625",
  "developer_mode_only": 0,
- "disable_user_customization": 0,
+ "disable_user_customization": 1,
  "docstatus": 0,
  "doctype": "Workspace",
  "extends_another_page": 0,
@@ -42,8 +42,8 @@
    "type": "Link"
   }
  ],
- "modified": "2023-03-10 14:46:32.037625",
- "modified_by": "Administrator",
+ "modified": "2023-11-07 14:26:37.219777",
+ "modified_by": "satria@das.com",
  "module": "Addons",
  "name": "BC Order",
  "owner": "Administrator",

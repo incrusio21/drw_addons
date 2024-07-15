@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-01-23 13:14:45.603099",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "date",
+  "user_admin",
+  "column_break_3",
+  "dc",
+  "company",
+  "get_data",
+  "section_break_5",
+  "detail"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "get_data",
+   "fieldtype": "Button",
+   "label": "Get Data",
+   "options": "get_delivery_note"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "detail",
+   "fieldtype": "Table",
+   "label": "Detail",
+   "options": "Print Pengiriman Detail"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "DN-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dc",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "DC",
+   "options": "Drop Center",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "dc.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "user_admin",
+   "fieldtype": "Link",
+   "label": "User Admin",
+   "options": "User",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-26 11:30:12.420752",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Print Pengiriman",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

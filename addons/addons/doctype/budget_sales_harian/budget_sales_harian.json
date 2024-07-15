@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-03-25 09:18:59.481051",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "dc",
+  "bulan",
+  "column_break_4",
+  "fiscal_year",
+  "section_break_4",
+  "pertambahan_target",
+  "get_data",
+  "details"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "BUD-SAL-.MM./.YY.-"
+  },
+  {
+   "fieldname": "dc",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "DC",
+   "options": "Drop Center"
+  },
+  {
+   "fieldname": "bulan",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Bulan",
+   "options": "\nJanuari\nFebruari\nMaret\nApril\nMei\nJuni\nJuli\nAgustus\nSeptember\nOktober\nNovember\nDesember",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "details",
+   "fieldtype": "Table",
+   "label": "Details",
+   "options": "Budget Sales Harian Detail"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "label": "Fiscal Year",
+   "options": "Fiscal Year",
+   "reqd": 1
+  },
+  {
+   "default": "24",
+   "fieldname": "pertambahan_target",
+   "fieldtype": "Percent",
+   "label": "Pertambahan Target"
+  },
+  {
+   "fieldname": "get_data",
+   "fieldtype": "Button",
+   "label": "Get Data",
+   "options": "get_so_last_year"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-04-01 10:36:27.461635",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Budget Sales Harian",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

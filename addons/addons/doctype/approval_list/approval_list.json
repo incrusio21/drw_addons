@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-08-31 14:09:33.459342",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "keterangan",
+  "kode_employee",
+  "nama",
+  "jabatan",
+  "department"
+ ],
+ "fields": [
+  {
+   "fieldname": "keterangan",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Keterangan",
+   "options": "\nYang Mengajukan\nMengetahui\nMenyetujui",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "kode_employee.employee_name",
+   "fieldname": "nama",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nama",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "kode_employee.designation",
+   "fieldname": "jabatan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Jabatan",
+   "options": "Designation",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "kode_employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Kode Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "kode_employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-08-31 16:28:52.694376",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Approval List",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

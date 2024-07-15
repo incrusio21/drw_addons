@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-19 15:41:30.909030",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "image",
+  "sales_invoice",
+  "customer_name",
+  "admin_order",
+  "user_admin"
+ ],
+ "fields": [
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "sales_invoice.admin_order",
+   "fieldname": "admin_order",
+   "fieldtype": "Link",
+   "label": "Admin Order",
+   "options": "Admin Order BC"
+  },
+  {
+   "fetch_from": "admin_order.user",
+   "fieldname": "user_admin",
+   "fieldtype": "Link",
+   "label": "User Admin",
+   "options": "User"
+  },
+  {
+   "fetch_from": "sales_invoice.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-05 16:57:54.796212",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Sales Invoice Proof of Payment",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

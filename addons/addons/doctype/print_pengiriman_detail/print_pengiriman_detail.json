@@ -1,0 +1,46 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-23 13:14:32.180460",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "id_delivery_note",
+  "delivery_date",
+  "print"
+ ],
+ "fields": [
+  {
+   "fieldname": "id_delivery_note",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "ID Delivery Note",
+   "options": "Delivery Note"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Delivery Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "print",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Print"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-23 13:16:00.801075",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Print Pengiriman Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
