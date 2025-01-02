@@ -4,5 +4,5 @@
 # import frappe
 import unittest
 
-class TestWithdrawCoin(unittest.TestCase):
+class TestDataWithdrawProofPayment(unittest.TestCase):
 	pass

@@ -97,6 +97,21 @@ fixtures = [
 #	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
 
+fixtures = [
+	{
+		"dt": "Client Script"
+	},
+    {
+		"dt": "Server Script"
+	},
+	{
+		"dt": "Custom Field"
+	},
+    {
+		"dt": "Property Setter"
+	},
+]
+
 jenv = {
     "filters": [
         "get_qr_svg_code_asset:addons.jinja.get_qr_svg_code_asset",
@@ -130,8 +145,12 @@ doc_events = {
 	},
     "Sales Order": {
 		"before_validate": "addons.custom.sales_order.validate_coin",		
-		"on_submit": ["addons.custom.sales_order.agent_coin_log", "addons.custom.sales_order.make_invoice"],		
-		"on_cancel": ["addons.custom.sales_order.agent_coin_log", "addons.custom.sales_order.agent_point_log","addons.custom.sales_order.remove_invoice"],		
+		"on_submit": [
+            "addons.custom.sales_order.agent_coin_log", 
+            "addons.custom.sales_order.agent_cashback_log", 
+            "addons.custom.sales_order.agent_point_log", 
+            "addons.custom.sales_order.make_invoice", "addons.custom.sales_order.update_field_get"],		
+		"on_cancel": ["addons.custom.sales_order.agent_coin_log", "addons.custom.sales_order.agent_cashback_log", "addons.custom.sales_order.agent_point_log", "addons.custom.sales_order.remove_invoice"],		
 	},
 	"Delivery Note": {
 		"on_submit": "addons.custom.delivery_note.create_agent_stock_log",		

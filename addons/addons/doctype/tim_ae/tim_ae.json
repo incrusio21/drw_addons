@@ -1,0 +1,45 @@
+{
+ "actions": [],
+ "autoname": "field:nama_tim",
+ "creation": "2024-08-29 22:30:50.750612",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "nama_tim"
+ ],
+ "fields": [
+  {
+   "fieldname": "nama_tim",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Nama Tim",
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-29 22:35:10.540797",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Tim AE",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

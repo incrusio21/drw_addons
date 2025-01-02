@@ -1,0 +1,36 @@
+{
+ "cards_label": "Event",
+ "category": "Modules",
+ "charts": [],
+ "creation": "2024-09-02 10:41:20.503832",
+ "developer_mode_only": 0,
+ "disable_user_customization": 1,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "icon": "color-monthly-rank",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Event",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Event Sheila",
+   "link_to": "Event Sheila",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-09-02 13:39:55.243119",
+ "modified_by": "Administrator",
+ "module": "Event",
+ "name": "Event",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "shortcuts": []
+}

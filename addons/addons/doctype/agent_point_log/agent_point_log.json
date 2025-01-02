@@ -16,9 +16,12 @@
   "id_drw_agent",
   "column_break_6",
   "posting_date",
+  "expired_date",
   "kelipatan",
   "total_belanja",
-  "total_point"
+  "total_point",
+  "before_point",
+  "get_point"
  ],
  "fields": [
   {
@@ -102,11 +105,27 @@
    "label": "Sales Order",
    "options": "Sales Order",
    "read_only": 1
+  },
+  {
+   "fieldname": "expired_date",
+   "fieldtype": "Date",
+   "label": "Expired Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "before_point",
+   "fieldtype": "Float",
+   "label": "Before Point"
+  },
+  {
+   "fieldname": "get_point",
+   "fieldtype": "Float",
+   "label": "Get Point"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-09 12:35:06.132436",
+ "modified": "2024-12-24 14:57:17.633663",
  "modified_by": "Administrator",
  "module": "Addons",
  "name": "Agent Point Log",

@@ -1,0 +1,167 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-08-28 20:41:36.303922",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "sales_order",
+  "sales_invoice",
+  "customer",
+  "customer_name",
+  "contact_no",
+  "grand_total",
+  "limit_kasbon",
+  "klaim_kasbon",
+  "tanggal_klaim",
+  "jatuh_tempo",
+  "tanggal_lunas",
+  "lunas",
+  "nama_bank",
+  "no_rekening",
+  "atas_nama_rekening",
+  "no_reference"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "sales_order.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "sales_order.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Customer Name"
+  },
+  {
+   "fetch_from": "customer.limit_kasbon",
+   "fieldname": "limit_kasbon",
+   "fieldtype": "Currency",
+   "label": "Limit Kasbon"
+  },
+  {
+   "fetch_from": "sales_order.klaim_kasbon",
+   "fieldname": "klaim_kasbon",
+   "fieldtype": "Currency",
+   "label": "Klaim Kasbon"
+  },
+  {
+   "fetch_from": "sales_order.transaction_date",
+   "fieldname": "tanggal_klaim",
+   "fieldtype": "Date",
+   "label": "Tanggal Klaim"
+  },
+  {
+   "fieldname": "jatuh_tempo",
+   "fieldtype": "Date",
+   "label": "Jatuh Tempo"
+  },
+  {
+   "fieldname": "nama_bank",
+   "fieldtype": "Link",
+   "label": "Nama Bank",
+   "options": "Bank"
+  },
+  {
+   "fetch_from": "nama_bank.no_rekening",
+   "fieldname": "no_rekening",
+   "fieldtype": "Data",
+   "label": "No Rekening"
+  },
+  {
+   "fetch_from": "nama_bank.atas_nama_rekening",
+   "fieldname": "atas_nama_rekening",
+   "fieldtype": "Data",
+   "label": "Atas Nama Rekening"
+  },
+  {
+   "fetch_from": "sales_order.grand_total",
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total"
+  },
+  {
+   "fieldname": "tanggal_lunas",
+   "fieldtype": "Date",
+   "label": "Tanggal Lunas"
+  },
+  {
+   "fieldname": "no_reference",
+   "fieldtype": "Data",
+   "label": "No Reference"
+  },
+  {
+   "default": "0",
+   "fieldname": "lunas",
+   "fieldtype": "Check",
+   "label": "Lunas"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "KSB-.MM.-.YY.-"
+  },
+  {
+   "fetch_from": "sales_order.sales_invoice",
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
+   "fetch_from": "sales_order.contact_mobile",
+   "fieldname": "contact_no",
+   "fieldtype": "Data",
+   "label": "Contact No"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-19 22:06:57.480573",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Data Kasbon",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

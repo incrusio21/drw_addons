@@ -43,7 +43,7 @@ def update_stock_bin():
 def update_coa():
     coa = frappe.db.get_list("GL Entry", 
         filters={
-            'account': '5110.020 - Penyesuaian Stock - DRW',
+            'account': '5110.024 - HPP Penjualan - ESTK',
         },
         fields=['name', 'voucher_type', 'voucher_no'],
         group_by="voucher_no"
@@ -51,19 +51,26 @@ def update_coa():
 
     for row in coa:
         # ubah nilai expense pada table detail item
-        if row.voucher_type == "Stock Entry":
+        table = ""    
+        if  row.voucher_type in ["Delivery Note", "Sales Invoice", "Purchase Receipt", "Purchase Invoice"]:
+            table = "Item" 
+        elif row.voucher_type in ["Stock Entry"]:
+            table = "Detail"
+        
+        if table:
             frappe.db.sql(
                 """
-                    UPDATE `tabStock Entry Detail` 
+                    UPDATE `tab{} {}` 
                     SET 
-                        expense_account = "3140.000 - Saldo Pembukaan Stok - DRW" 
+                        expense_account = "4220.000 - HPP Penjualan - ESTK" 
                     WHERE parent = "{}"
-                """.format(row.voucher_no)
+                """.format(row.voucher_type, table, row.voucher_no)
             )
 
             repair_gl_entry(row.voucher_type, row.voucher_no)
-
-            print(row.voucher_no)
+            print(row.voucher_type + "-" + row.voucher_no)
+        else:
+            print("error:" + row.voucher_type + "-" + row.voucher_no)
 
 # bench execute addons.patch.create_user_employee
 def create_user_employee():
@@ -390,3 +397,15 @@ def so_diskon_fix():
         print("--sinv updated--")
 
         frappe.db.commit()
+
+def agent_cashback_log():
+    acl = frappe.get_list("Agent Cashback Log", pluck="name")
+    for row in acl:
+        print(row)
+        doc = frappe.get_doc("Agent Cashback Log", row)
+        get_coin = frappe.get_value("Sales Order", doc.sales_order, "get_cashback")
+        if not get_coin:
+            continue
+
+        doc.total_coin = get_coin
+        doc.save()

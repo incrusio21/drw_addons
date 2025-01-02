@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "creation": "2024-08-26 13:23:21.096615",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "nama",
+  "index",
+  "child",
+  "type",
+  "icon",
+  "url"
+ ],
+ "fields": [
+  {
+   "fieldname": "nama",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nama",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Menu\nSubmenu"
+  },
+  {
+   "fieldname": "icon",
+   "fieldtype": "Data",
+   "label": "Icon"
+  },
+  {
+   "fieldname": "url",
+   "fieldtype": "Data",
+   "label": "URL"
+  },
+  {
+   "fieldname": "index",
+   "fieldtype": "Int",
+   "label": "Index"
+  },
+  {
+   "fieldname": "child",
+   "fieldtype": "Int",
+   "label": "Child"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-27 17:21:28.212974",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Admin Role Menu",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

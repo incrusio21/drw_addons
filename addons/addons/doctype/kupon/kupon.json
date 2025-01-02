@@ -1,0 +1,91 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-27 19:10:15.312574",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "amount",
+  "description",
+  "valid_to",
+  "min_transaksi",
+  "customer",
+  "tnc",
+  "image",
+  "file"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "valid_to",
+   "fieldtype": "Date",
+   "label": "Valid To"
+  },
+  {
+   "fieldname": "min_transaksi",
+   "fieldtype": "Currency",
+   "label": "Min Transaksi"
+  },
+  {
+   "fieldname": "tnc",
+   "fieldtype": "Text",
+   "label": "TnC"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Image",
+   "label": "Image",
+   "options": "file"
+  },
+  {
+   "fieldname": "file",
+   "fieldtype": "Attach Image",
+   "label": "File"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-27 19:19:11.123179",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Kupon",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

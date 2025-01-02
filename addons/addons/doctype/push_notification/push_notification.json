@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-28 18:29:57.959367",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "full_name",
+  "token",
+  "last_login",
+  "device"
+ ],
+ "fields": [
+  {
+   "fieldname": "token",
+   "fieldtype": "Text",
+   "label": "Token"
+  },
+  {
+   "fieldname": "last_login",
+   "fieldtype": "Datetime",
+   "label": "Last Login"
+  },
+  {
+   "fieldname": "device",
+   "fieldtype": "Data",
+   "label": "Device"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "user.full_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-29 13:57:05.302927",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Push Notification",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

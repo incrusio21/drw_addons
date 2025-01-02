@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "creation": "2024-09-09 17:11:00.415540",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "kasbon_id",
+  "image"
+ ],
+ "fields": [
+  {
+   "fieldname": "kasbon_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Kasbon Id",
+   "options": "Data Kasbon",
+   "reqd": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-09 17:11:00.415540",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Data Kasbon Proof Payment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

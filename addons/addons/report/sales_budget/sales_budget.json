@@ -6,10 +6,18 @@
  "disabled": 0,
  "docstatus": 0,
  "doctype": "Report",
- "filters": [],
+ "filters": [
+  {
+   "fieldname": "Tanggal",
+   "fieldtype": "Date",
+   "label": "Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  }
+ ],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2024-03-25 10:57:13.519546",
+ "modified": "2024-09-24 09:40:06.555025",
  "modified_by": "Administrator",
  "module": "Addons",
  "name": "Sales Budget",

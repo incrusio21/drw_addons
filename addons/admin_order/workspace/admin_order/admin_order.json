@@ -58,10 +58,27 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Order Racik",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Order Racik",
+   "link_to": "Order Racik",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-01-18 12:13:57.051629",
- "modified_by": "satria@das.com",
+ "modified": "2024-12-07 12:59:19.738981",
+ "modified_by": "Administrator",
  "module": "Admin Order",
  "name": "Admin Order",
  "owner": "satria@das.com",

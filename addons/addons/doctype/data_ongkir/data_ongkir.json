@@ -8,10 +8,28 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
-  "sinv",
-  "cust",
-  "nama_customer",
-  "ongkir"
+  "sales_order",
+  "sales_invoice",
+  "customer",
+  "customer_name",
+  "warehouse",
+  "shipping_name",
+  "shipping_address",
+  "contact_no",
+  "total_belanja",
+  "estimasi_berat",
+  "ekspedisi",
+  "nama_kurir",
+  "resi",
+  "total_ongkir",
+  "tanggal_order",
+  "jatuh_tempo",
+  "tanggal_lunas",
+  "lunas",
+  "nama_bank",
+  "no_rekening",
+  "atas_nama_rekening",
+  "no_reference"
  ],
  "fields": [
   {
@@ -21,32 +39,145 @@
    "options": "OKR-.MM.-.YY.-"
   },
   {
-   "fieldname": "sinv",
+   "fetch_from": "sales_order.customer",
+   "fieldname": "customer",
    "fieldtype": "Link",
-   "label": "ID Sales Invoice",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fetch_from": "sales_invoice.estimasi_berat",
+   "fieldname": "estimasi_berat",
+   "fieldtype": "Int",
+   "label": "Estimasi Berat"
+  },
+  {
+   "fetch_from": "sales_invoice.ekspedisi",
+   "fieldname": "ekspedisi",
+   "fieldtype": "Link",
+   "label": "Ekspedisi",
+   "options": "Ekspedisi"
+  },
+  {
+   "fetch_from": "ekspedisi.kurir",
+   "fieldname": "nama_kurir",
+   "fieldtype": "Link",
+   "label": "Nama Kurir",
+   "options": "Kurir"
+  },
+  {
+   "fieldname": "resi",
+   "fieldtype": "Data",
+   "label": "Resi"
+  },
+  {
+   "fieldname": "total_ongkir",
+   "fieldtype": "Currency",
+   "label": "Total Ongkir"
+  },
+  {
+   "fetch_from": "sales_order.sales_invoice",
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Invoice",
    "options": "Sales Invoice"
   },
   {
-   "fieldname": "cust",
+   "fetch_from": "sales_order.set_warehouse",
+   "fieldname": "warehouse",
    "fieldtype": "Link",
-   "label": "ID Customer",
-   "options": "Customer"
+   "label": "Warehouse",
+   "options": "Warehouse"
   },
   {
-   "fetch_from": "cust.customer_name",
-   "fieldname": "nama_customer",
+   "fetch_from": "sales_order.shipping_address_name",
+   "fieldname": "shipping_name",
    "fieldtype": "Data",
-   "label": "Nama Customer"
+   "label": "Shipping Name"
   },
   {
-   "fieldname": "ongkir",
+   "fetch_from": "sales_order.shipping_address",
+   "fieldname": "shipping_address",
+   "fieldtype": "Data",
+   "label": "Shipping Address"
+  },
+  {
+   "fetch_from": "sales_order.contact_mobile",
+   "fieldname": "contact_no",
+   "fieldtype": "Data",
+   "label": "Contact No"
+  },
+  {
+   "fetch_from": "sales_order.grand_total",
+   "fieldname": "total_belanja",
    "fieldtype": "Currency",
-   "label": "Total Ongkir"
+   "label": "Total Belanja"
+  },
+  {
+   "fieldname": "nama_bank",
+   "fieldtype": "Link",
+   "label": "Nama Bank",
+   "options": "Bank"
+  },
+  {
+   "fetch_from": "nama_bank.no_rekening",
+   "fieldname": "no_rekening",
+   "fieldtype": "Data",
+   "label": "No Rekening"
+  },
+  {
+   "fetch_from": "nama_bank.atas_nama_rekening",
+   "fieldname": "atas_nama_rekening",
+   "fieldtype": "Data",
+   "label": "Atas Nama Rekening"
+  },
+  {
+   "fieldname": "no_reference",
+   "fieldtype": "Data",
+   "label": "No Reference"
+  },
+  {
+   "fieldname": "jatuh_tempo",
+   "fieldtype": "Date",
+   "label": "Jatuh Tempo"
+  },
+  {
+   "fieldname": "tanggal_lunas",
+   "fieldtype": "Date",
+   "label": "Tanggal Lunas"
+  },
+  {
+   "default": "0",
+   "fieldname": "lunas",
+   "fieldtype": "Check",
+   "label": "Lunas"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "sales_order.transaction_date",
+   "fieldname": "tanggal_order",
+   "fieldtype": "Date",
+   "label": "Tanggal Order"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-11 09:38:12.186728",
+ "modified": "2024-09-19 21:58:56.090241",
  "modified_by": "Administrator",
  "module": "Addons",
  "name": "Data Ongkir",

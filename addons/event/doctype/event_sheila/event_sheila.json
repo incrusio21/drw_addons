@@ -1,0 +1,190 @@
+{
+ "actions": [],
+ "creation": "2024-09-02 11:58:05.576564",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "nama_lengkap",
+  "id_drw",
+  "telepon",
+  "email",
+  "nik",
+  "alamat",
+  "paket",
+  "untuk_pasangan",
+  "untuk_anak",
+  "bersedia",
+  "nama_pasangan",
+  "nik_pasangan",
+  "nama_anak_1",
+  "nama_anak_2",
+  "nama_anak_3",
+  "id_order_drw",
+  "qty_order",
+  "total_order",
+  "nama_order",
+  "level_order",
+  "kelas",
+  "nomor_seat",
+  "validasi_datang"
+ ],
+ "fields": [
+  {
+   "fieldname": "nama_lengkap",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nama Lengkap",
+   "reqd": 1
+  },
+  {
+   "fieldname": "id_drw",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Id DRW",
+   "reqd": 1
+  },
+  {
+   "fieldname": "telepon",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Telepon",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "paket",
+   "fieldtype": "Select",
+   "label": "Paket",
+   "options": "Sendiri\nNew Reseller\nKerabat"
+  },
+  {
+   "fieldname": "untuk_pasangan",
+   "fieldtype": "Select",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Untuk Pasangan",
+   "options": "None\nSuami\nIstri"
+  },
+  {
+   "fieldname": "untuk_anak",
+   "fieldtype": "Select",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Untuk Anak",
+   "options": "None\n1 Anak\n2 Anak\n3 Anak"
+  },
+  {
+   "fieldname": "bersedia",
+   "fieldtype": "Select",
+   "label": "Bersedia",
+   "options": "Ya\nTidak"
+  },
+  {
+   "fieldname": "alamat",
+   "fieldtype": "Small Text",
+   "label": "Alamat"
+  },
+  {
+   "fieldname": "nama_pasangan",
+   "fieldtype": "Data",
+   "label": "Nama Pasangan"
+  },
+  {
+   "fieldname": "nik_pasangan",
+   "fieldtype": "Data",
+   "label": "NIK Pasangan"
+  },
+  {
+   "fieldname": "nik",
+   "fieldtype": "Data",
+   "label": "NIK"
+  },
+  {
+   "fieldname": "nama_anak_1",
+   "fieldtype": "Data",
+   "label": "Nama Anak 1"
+  },
+  {
+   "fieldname": "nama_anak_2",
+   "fieldtype": "Data",
+   "label": "Nama Anak 2"
+  },
+  {
+   "fieldname": "nama_anak_3",
+   "fieldtype": "Data",
+   "label": "Nama Anak 3"
+  },
+  {
+   "fieldname": "id_order_drw",
+   "fieldtype": "Data",
+   "label": "Id Order DRW"
+  },
+  {
+   "fieldname": "qty_order",
+   "fieldtype": "Data",
+   "label": "Qty Order"
+  },
+  {
+   "fieldname": "total_order",
+   "fieldtype": "Data",
+   "label": "Total Order"
+  },
+  {
+   "fieldname": "nama_order",
+   "fieldtype": "Data",
+   "label": "Nama Order"
+  },
+  {
+   "fieldname": "level_order",
+   "fieldtype": "Data",
+   "label": "Level Order"
+  },
+  {
+   "fieldname": "kelas",
+   "fieldtype": "Select",
+   "label": "Kelas",
+   "options": "Reguler\nVIP\nVVIP"
+  },
+  {
+   "fieldname": "nomor_seat",
+   "fieldtype": "Int",
+   "label": "Nomor Seat"
+  },
+  {
+   "fieldname": "validasi_datang",
+   "fieldtype": "Select",
+   "label": "Validasi Datang",
+   "options": "\nYa\nTidak"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-13 10:13:41.384766",
+ "modified_by": "Administrator",
+ "module": "Event",
+ "name": "Event Sheila",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "creation": "2024-08-26 00:00:29.126611",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "nama_voucher",
+  "apply_on",
+  "discount_percentage",
+  "discount_amount",
+  "description",
+  "voucher_item",
+  "customer",
+  "customer_name",
+  "claim_sales_order",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "nama_voucher",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Nama Voucher"
+  },
+  {
+   "fieldname": "apply_on",
+   "fieldtype": "Select",
+   "label": "Apply On",
+   "options": "Grand Total\nNet Total"
+  },
+  {
+   "fieldname": "discount_percentage",
+   "fieldtype": "Float",
+   "label": "Discount Percentage"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "voucher_item",
+   "fieldtype": "Link",
+   "label": "Voucher Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "claim_sales_order",
+   "fieldtype": "Link",
+   "label": "Claim Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "default": "if len(claim_sales_order)>0: Sudah Klaim\nelse: Belum Klaim",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-26 00:47:40.997565",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Voucher",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

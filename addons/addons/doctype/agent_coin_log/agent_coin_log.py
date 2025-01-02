@@ -10,7 +10,7 @@ class AgentCoinLog(Document):
 		if self.total_margin and self.kelipatan:
 			self.total_coin = math.floor(self.total_margin / self.kelipatan)
 
-	def after_insert(self):
+	def on_update(self):
 		self.update_customer_coin()
 		
 	def after_delete(self):

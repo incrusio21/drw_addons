@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-09-16 07:23:41.954268",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "amended_from",
+  "company",
+  "customer",
+  "customer_name",
+  "posting_date",
+  "coin_before",
+  "coin_balance",
+  "total_withdraw",
+  "total_amount",
+  "nama_bank",
+  "no_rekening",
+  "atas_nama_rekening",
+  "biaya_pajak",
+  "biaya_penanganan",
+  "grand_total",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "WDC-.YY.-"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Withdraw Coins",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fetch_from": "customer.total_coins",
+   "fieldname": "coin_before",
+   "fieldtype": "Float",
+   "label": "Coin Before"
+  },
+  {
+   "fieldname": "coin_balance",
+   "fieldtype": "Float",
+   "label": "Coin Balance"
+  },
+  {
+   "fieldname": "total_withdraw",
+   "fieldtype": "Float",
+   "label": "Total Withdraw"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "nama_bank",
+   "fieldtype": "Data",
+   "label": "Nama Bank"
+  },
+  {
+   "fieldname": "no_rekening",
+   "fieldtype": "Data",
+   "label": "No Rekening"
+  },
+  {
+   "fieldname": "atas_nama_rekening",
+   "fieldtype": "Data",
+   "label": "Atas Nama Rekening"
+  },
+  {
+   "fieldname": "biaya_pajak",
+   "fieldtype": "Currency",
+   "label": "Biaya Pajak"
+  },
+  {
+   "fieldname": "biaya_penanganan",
+   "fieldtype": "Currency",
+   "label": "Biaya Penanganan"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total"
+  },
+  {
+   "default": "Menunggu",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Menunggu\nDiterima\nDitolak"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-09-26 15:04:29.039781",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Withdraw Coins",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

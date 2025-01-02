@@ -1,0 +1,230 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-07 10:08:13.374833",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tanggal",
+  "no_rm",
+  "nama_pasien",
+  "nik",
+  "no_hp",
+  "tgl_lahir",
+  "jenis_kelamin",
+  "column_break_cl6r0",
+  "jenis_kulit",
+  "keluhan",
+  "riwayat_penyakit",
+  "produk_yang_sedang_dipakai",
+  "keterangan",
+  "alamat",
+  "no_id_bc_rekomendasi",
+  "level_bc_rekomendasi",
+  "section_break_elspg",
+  "foto_ktp",
+  "foto_sisi_depan",
+  "foto_sisi_kanan",
+  "foto_sisi_kiri",
+  "section_break_fqtrw",
+  "tgl_done",
+  "item",
+  "total_belanja",
+  "total_coin",
+  "biaya_ongkir",
+  "ekspedisi",
+  "no_resi",
+  "ppa"
+ ],
+ "fields": [
+  {
+   "fieldname": "tanggal",
+   "fieldtype": "Date",
+   "label": "Tanggal"
+  },
+  {
+   "fieldname": "no_rm",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "No RM"
+  },
+  {
+   "fieldname": "nama_pasien",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Nama Pasien"
+  },
+  {
+   "fieldname": "nik",
+   "fieldtype": "Data",
+   "label": "NIK"
+  },
+  {
+   "fieldname": "no_hp",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "No HP"
+  },
+  {
+   "fieldname": "jenis_kelamin",
+   "fieldtype": "Select",
+   "label": "Jenis Kelamin",
+   "options": "Perempuan\nLaki-laki"
+  },
+  {
+   "fieldname": "tgl_lahir",
+   "fieldtype": "Date",
+   "label": "Tgl Lahir"
+  },
+  {
+   "fieldname": "jenis_kulit",
+   "fieldtype": "Data",
+   "label": "Jenis Kulit"
+  },
+  {
+   "fieldname": "keluhan",
+   "fieldtype": "Data",
+   "label": "Keluhan"
+  },
+  {
+   "fieldname": "riwayat_penyakit",
+   "fieldtype": "Data",
+   "label": "Riwayat Penyakit"
+  },
+  {
+   "fieldname": "produk_yang_sedang_dipakai",
+   "fieldtype": "Data",
+   "label": "Produk yang sedang dipakai"
+  },
+  {
+   "fieldname": "keterangan",
+   "fieldtype": "Select",
+   "label": "Keterangan",
+   "options": "Normal\nBelum"
+  },
+  {
+   "fieldname": "alamat",
+   "fieldtype": "Small Text",
+   "label": "Alamat"
+  },
+  {
+   "fieldname": "foto_ktp",
+   "fieldtype": "Attach Image",
+   "label": "Foto KTP"
+  },
+  {
+   "fieldname": "foto_sisi_depan",
+   "fieldtype": "Attach Image",
+   "label": "Foto Sisi Depan"
+  },
+  {
+   "fieldname": "foto_sisi_kanan",
+   "fieldtype": "Attach Image",
+   "label": "Foto Sisi Kanan"
+  },
+  {
+   "fieldname": "foto_sisi_kiri",
+   "fieldtype": "Attach Image",
+   "label": "Foto Sisi Kiri"
+  },
+  {
+   "fieldname": "no_id_bc_rekomendasi",
+   "fieldtype": "Data",
+   "label": "No Id BC Rekomendasi"
+  },
+  {
+   "fieldname": "tgl_done",
+   "fieldtype": "Date",
+   "label": "Tgl Done"
+  },
+  {
+   "fieldname": "total_belanja",
+   "fieldtype": "Currency",
+   "label": "Total Belanja"
+  },
+  {
+   "fieldname": "biaya_ongkir",
+   "fieldtype": "Currency",
+   "label": "Biaya Ongkir"
+  },
+  {
+   "fieldname": "ekspedisi",
+   "fieldtype": "Select",
+   "label": "Ekspedisi",
+   "options": "JNT\nJNE\nPOS"
+  },
+  {
+   "fieldname": "no_resi",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "No Resi"
+  },
+  {
+   "fieldname": "ppa",
+   "fieldtype": "Data",
+   "label": "PPA"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Table",
+   "label": "Item",
+   "options": "Order Racik Tabel Item"
+  },
+  {
+   "fieldname": "level_bc_rekomendasi",
+   "fieldtype": "Select",
+   "label": "Level BC Rekomendasi",
+   "options": "Director\nManager\nSupervisor\nConsultant"
+  },
+  {
+   "fieldname": "column_break_cl6r0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_elspg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_fqtrw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_coin",
+   "fieldtype": "Float",
+   "label": "Total Coin"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-07 13:43:13.260317",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Order Racik",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

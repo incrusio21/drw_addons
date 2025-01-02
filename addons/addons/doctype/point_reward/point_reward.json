@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-31 12:38:10.389634",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "id_drw",
+  "nama",
+  "date",
+  "point",
+  "deskripsi"
+ ],
+ "fields": [
+  {
+   "fieldname": "id_drw",
+   "fieldtype": "Data",
+   "label": "Id DRW"
+  },
+  {
+   "fieldname": "nama",
+   "fieldtype": "Data",
+   "label": "Nama"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "point",
+   "fieldtype": "Float",
+   "label": "Point"
+  },
+  {
+   "fieldname": "deskripsi",
+   "fieldtype": "Data",
+   "label": "Deskripsi"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-31 12:38:10.389634",
+ "modified_by": "Administrator",
+ "module": "Addons",
+ "name": "Point Reward",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

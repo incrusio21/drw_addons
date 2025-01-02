@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "DCU-.######",
  "creation": "2024-06-26 06:15:11.962287",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -17,7 +18,6 @@
   "pekerjaan",
   "hobi_1",
   "hobi_2",
-  "hobi_3",
   "pendidikan",
   "facebook",
   "instagram",
@@ -30,13 +30,15 @@
   "lazada",
   "bukalapak",
   "blibli",
-  "marketplace"
+  "marketplace",
+  "sosmed"
  ],
  "fields": [
   {
    "fieldname": "id_drw",
    "fieldtype": "Data",
-   "label": "Id DRW"
+   "label": "Id DRW",
+   "unique": 1
   },
   {
    "fieldname": "nama_lengkap",
@@ -87,11 +89,6 @@
    "fieldname": "hobi_2",
    "fieldtype": "Data",
    "label": "Hobi 2"
-  },
-  {
-   "fieldname": "hobi_3",
-   "fieldtype": "Data",
-   "label": "Hobi 3"
   },
   {
    "fieldname": "pendidikan",
@@ -157,11 +154,16 @@
    "fieldname": "marketplace",
    "fieldtype": "Data",
    "label": "Marketplace"
+  },
+  {
+   "fieldname": "sosmed",
+   "fieldtype": "Data",
+   "label": "Sosmed"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-26 06:15:11.962287",
+ "modified": "2024-08-05 07:10:53.543668",
  "modified_by": "Administrator",
  "module": "Addons",
  "name": "Data Customer",
